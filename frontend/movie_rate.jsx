@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { login } from './util/session_api_util';
 import configureStore from './store/store';
+import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const root = document.getElementById("root");
-    // window.login = login
     const store = configureStore();
+
+    // TEST START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-
+    // TEST END
+    
+    const root = document.getElementById("root");
     ReactDOM.render(<h1>Welcome to MovieRate</h1>, root);
 });
