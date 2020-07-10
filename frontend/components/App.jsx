@@ -1,8 +1,11 @@
 import React from 'react';
+import NavBarContainer from '../components/navbar/navbar_container';
 
 const App = () => (
     <div>
-        <h1>MovieRate</h1>
+        <header>
+            <NavBarContainer />
+        </header>
     </div>
 );
 

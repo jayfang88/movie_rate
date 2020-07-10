@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // TEST END
     
     const root = document.getElementById("root");
-    ReactDOM.render(<h1>Welcome to MovieRate</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
