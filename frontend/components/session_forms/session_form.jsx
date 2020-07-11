@@ -28,10 +28,10 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className='session-errors-list'>
                 {this.props.errors.map((error, i) => (
                     <li className='error-message' key={`error-${i}`}>
-                        {`${error}`}
+                        {`*${error}*`}
                     </li>
                 ))}
             </ul>
@@ -43,8 +43,7 @@ class SessionForm extends React.Component {
         return (
             <div className='session-form-page'>
                 <div className='session-form'>
-                    <h3>{this.props.formType}</h3>
-                    <br/>
+                    <h3 className='session-form-title'>{this.props.formType}</h3>
                     {this.renderErrors()}
                     <br/>
                     <form className='session-form-box'>
@@ -75,9 +74,9 @@ class SessionForm extends React.Component {
                         </button>
                     </form>
                     {signingUp ? (
-                        <p>Have an account?<Link className='switch-session-form' to='/login'>Log in instead</Link></p>
+                        <p className='session-form-under'>Have an account? <Link className='switch-session-form' to='/login'>Log in instead</Link></p>
                     ) : (
-                        <p>Don't have an account?<Link className='switch-session-form' to='/signup'>Sign up here</Link></p>
+                        <p className='session-form-under'>Don't have an account? <Link className='switch-session-form' to='/signup'>Sign up here</Link></p>
                     )}
                 </div>
             </div>

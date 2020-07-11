@@ -15,9 +15,11 @@
  */
 
 $black: #2c2c2c;
+$darkgray: #999999;
 $gray: #b4b4b4;
 $white: #f5f5f5;
 $red: #d21f3c;
+$lightred: #ee3f5c;
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -48,7 +50,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	// background-color: $white;
+	background-color: $white;
 }
 ol, ul {
 	list-style: none;
