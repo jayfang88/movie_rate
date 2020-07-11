@@ -12,7 +12,7 @@ class NavBar extends React.Component {
             <div className='navbar'>
                 {/* Replace link below with MovieRate Logo */}
                 <section className='nav-logo-section'>
-                    <Link className='logo-link' to='/'><h3><span className='red'>Movie</span>Rate</h3></Link>
+                    <Link className='logo-link' to='/'><h3><span className='red'>M</span>R</h3></Link>
                 </section>
                 
                 {currentUser ? (
