@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    padding: 5px 30px;
+    padding: 5px 25px;
     background-color: $black;
     border-bottom: 2px solid $red;
 }
@@ -34,7 +34,10 @@
     width: 80px;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 50%;
+}
+.nav-link:hover {
+    color: $gray;
 }
 
 .nav-user {
@@ -49,7 +52,7 @@
     color: $red;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 50%;
     font-size: 16px;
 }
 .nav-logout:hover {

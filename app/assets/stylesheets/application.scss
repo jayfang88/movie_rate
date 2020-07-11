@@ -14,12 +14,12 @@
  *= require_self
  */
 
- $black: #2c2c2c;
- $gray: #b4acae;
- $white: #f5f5f5;
- $red: #d21f3c;
+$black: #2c2c2c;
+$gray: #b4b4b4;
+$white: #f5f5f5;
+$red: #d21f3c;
 
- html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -40,6 +40,7 @@ time, mark, audio, video {
     font-family: sans-serif;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -47,6 +48,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	// background-color: $white;
 }
 ol, ul {
 	list-style: none;
