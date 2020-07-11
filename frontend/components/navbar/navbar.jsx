@@ -11,19 +11,22 @@ class NavBar extends React.Component {
         return (
             <div className='navbar'>
                 {/* Replace link below with MovieRate Logo */}
-                <Link to='/'><h3>MovieRate</h3></Link>
+                <section className='nav-logo-section'>
+                    <Link className='logo-link' to='/'><h3><span className='red'>Movie</span>Rate</h3></Link>
+                </section>
                 
                 {currentUser ? (
-                    <div className='nav-btn'>
-                        <div>Logged in as: {currentUser.name[0].toUpperCase()}</div>
+                    <section className='nav-section'>
+                        <div className='nav-user'>Signed in as: {currentUser.name[0].toUpperCase()}</div>
                         <button onClick={() => this.handleLogout()}
-                            className='logout-btn'>Sign Out</button>
-                    </div>
+                            className='nav-logout'>Log Out
+                        </button>
+                    </section>
                 ) : (
-                    <div className='nav-btn'>
-                        <Link to='/signup'>Sign Up</Link>
-                        <Link to='/login'>Log In</Link>
-                    </div>
+                    <section className='nav-section'>
+                        <Link to='/login' className='nav-link'>Log In</Link>
+                        <Link to='/signup' className='nav-link'>Sign Up</Link>
+                    </section>
                 )}
             </div>
         )
