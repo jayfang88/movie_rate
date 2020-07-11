@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Api::MediaControllerTest < ActionDispatch::IntegrationTest
+class Api::MoviesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,1 @@
+json.extract! movie, :id, :title, :year_released, :score, :description
