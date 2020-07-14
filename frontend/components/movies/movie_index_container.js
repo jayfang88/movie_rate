@@ -3,7 +3,6 @@ import { fetchMovies } from '../../actions/movie_actions';
 import MovieIndex from './movie_index';
 
 const mSTP = state => {
-    // debugger;
     return{
     movies: Object.values(state.entities.movies),
     errors: state.errors.movie
