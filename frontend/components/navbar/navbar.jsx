@@ -6,6 +6,11 @@ class NavBar extends React.Component {
         this.props.logout().then(() => location.reload());
     }
 
+    createMovie() {
+        this.props.openModal('new-movie');
+        console.log('opening modal to enter new movie')
+    }
+
     render() {
         let currentUser = this.props.currentUser;
         return (
@@ -17,7 +22,10 @@ class NavBar extends React.Component {
                 
                 {currentUser ? (
                     <section className='nav-section'>
-                        <div className='nav-user'>Signed in as: {currentUser.name[0].toUpperCase()}</div>
+                        <button onClick={() => this.createMovie()}
+                            className='nav-add'>Add New
+                        </button>
+                        <p className='nav-user'>Signed in as: {currentUser.name[0].toUpperCase()}</p>
                         <button onClick={() => this.handleLogout()}
                             className='nav-logout'>Log Out
                         </button>

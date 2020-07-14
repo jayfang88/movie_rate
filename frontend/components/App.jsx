@@ -6,9 +6,11 @@ import NavBarContainer from '../components/navbar/navbar_container';
 import SignupFormContainer from './session_forms/signup_form_container';
 import LoginFormContainer from './session_forms/login_form_container';
 import MovieIndexContainer from './movies/movie_index_container';
+import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <NavBarContainer />
         </header>
