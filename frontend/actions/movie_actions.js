@@ -35,15 +35,14 @@ export const fetchMovie = movieId => dispatch => (
         .then(movie => dispatch(receiveMovie(movie)))
 );
 
-export const createMovie = movie => dispatch => {
-    debugger;
-    return MoviesApiUtil.createMovie(movie)
+export const createMovie = movie => dispatch => (
+    MoviesApiUtil.createMovie(movie)
         .then(movie => (
             dispatch(receiveMovie(movie))
         ), err => (
             dispatch(receiveErrors(err.responseJSON))
         ))
-};
+);
 
 export const updateMovie = movie => dispatch => (
     MoviesApiUtil.updateMovie(movie)

@@ -3,10 +3,13 @@ import React from 'react';
 class MovieForm extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = this.props.movie
         this.handleCreate = this.handleCreate.bind(this)
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
