@@ -26,7 +26,7 @@ class MovieForm extends React.Component {
         this.props.createMovie(formData)
             .then(() => this.props.fetchMovies())
             .then(() => {
-                if (this.state.errors.length <= 0) {
+                if (this.props.errors.length <= 0) {
                     this.props.closeModal();
                 }
             });

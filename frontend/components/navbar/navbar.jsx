@@ -8,14 +8,13 @@ class NavBar extends React.Component {
 
     createMovie() {
         this.props.openModal('new-movie');
-        console.log('opening modal to enter new movie')
     }
 
     render() {
         let currentUser = this.props.currentUser;
         return (
             <div className='navbar'>
-                {/* Replace link below with MovieRate Logo */}
+                {/* Create MovieRate Logo? */}
                 <section className='nav-logo-section'>
                     <Link className='logo-link' to='/'><h3><span className='red'>M</span>R</h3></Link>
                 </section>
@@ -32,8 +31,11 @@ class NavBar extends React.Component {
                     </section>
                 ) : (
                     <section className='nav-section'>
-                        <Link to='/login' className='nav-link'>Log In</Link>
-                        <Link to='/signup' className='nav-link'>Sign Up</Link>
+                        <button onClick={() => this.props.openModal('login')}
+                            className='nav-btn'>Log In</button>
+                        <button onClick={() => this.props.openModal('signup')}
+                            className='nav-btn'>Sign Up</button>
+                        {/* <Link to='/signup' className='nav-link'>Sign Up</Link> */}
                     </section>
                 )}
             </div>

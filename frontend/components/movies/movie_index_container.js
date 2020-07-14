@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchMovies } from '../../actions/movie_actions';
+import { fetchMovies, deleteMovie } from '../../actions/movie_actions';
 import MovieIndex from './movie_index';
 
 const mSTP = state => {
@@ -9,7 +9,8 @@ const mSTP = state => {
 }};
 
 const mDTP = dispatch => ({
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: () => dispatch(fetchMovies()),
+    deleteMovie: movieId => dispatch(deleteMovie(movieId))
 });
 
 export default connect(mSTP, mDTP)(MovieIndex);

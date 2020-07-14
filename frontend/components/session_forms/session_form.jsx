@@ -23,7 +23,9 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.props.action(this.state)
+            .then(() => {
+                if (this.props.errors.length <= 0) this.props.closeModal()});
     }
 
     renderErrors() {
@@ -41,44 +43,42 @@ class SessionForm extends React.Component {
     render() {
         let signingUp = (this.props.formType === 'Sign Up');
         return (
-            <div className='session-form-page'>
-                <div className='session-form'>
-                    <h3 className='session-form-title'>{this.props.formType}</h3>
-                    {this.renderErrors()}
+            <div className='session-form'>
+                <h3 className='session-form-title'>{this.props.formType}</h3>
+                {this.renderErrors()}
+                <br/>
+                <form className='session-form-box'>
+                    <label className='session-form-section'>
+                        Username<br/>
+                        <input className='session-form-input' type="text"
+                            value={this.state.username} onChange={this.update('username')}/>
+                    </label>
                     <br/>
-                    <form className='session-form-box'>
-                        <label className='session-form-section'>
-                            Username<br/>
-                            <input className='session-form-input' type="text"
-                                value={this.state.username} onChange={this.update('username')}/>
-                        </label>
-                        <br/>
-                        {signingUp ? (
-                            <label className='session-form-section'>
-                                Name<br />
-                                <input className='session-form-input' type="text"
-                                    value={this.state.name} onChange={this.update('name')} />
-                            </label>
-                        ) : (
-                            <div></div>
-                        )}
-                        {signingUp ? ( <br/> ) : ( <div></div> )}
-                        <label className='session-form-section'>
-                            Password<br/>
-                            <input className='session-form-input' type="password"
-                                value={this.state.password} onChange={this.update('password')}/>
-                        </label>
-                        <br/>
-                        <button className='session-form-btn' onClick={this.handleSubmit}>
-                            {this.props.formType}
-                        </button>
-                    </form>
                     {signingUp ? (
-                        <p className='session-form-under'>Have an account? <Link className='switch-session-form' to='/login'>Log in instead</Link></p>
+                        <label className='session-form-section'>
+                            Name<br />
+                            <input className='session-form-input' type="text"
+                                value={this.state.name} onChange={this.update('name')} />
+                        </label>
                     ) : (
-                        <p className='session-form-under'>Don't have an account? <Link className='switch-session-form' to='/signup'>Sign up here</Link></p>
+                        <div></div>
                     )}
-                </div>
+                    {signingUp ? ( <br/> ) : ( <div></div> )}
+                    <label className='session-form-section'>
+                        Password<br/>
+                        <input className='session-form-input' type="password"
+                            value={this.state.password} onChange={this.update('password')}/>
+                    </label>
+                    <br/>
+                    <button className='session-form-btn' onClick={this.handleSubmit}>
+                        {this.props.formType}
+                    </button>
+                </form>
+                {signingUp ? (
+                    <p className='session-form-under'>Have an account? {this.props.switchForm}</p>
+                ) : (
+                    <p className='session-form-under'>Don't have an account? {this.props.switchForm}</p>
+                )}
             </div>
         )
     }

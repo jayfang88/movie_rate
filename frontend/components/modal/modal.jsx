@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import MovieFormContainer from '../movies/movie_form_container';
+import SignupFormContainer from '../session_forms/signup_form_container';
+import LoginFormContainer from '../session_forms/login_form_container';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -9,10 +11,20 @@ function Modal({modal, closeModal}) {
     }
     
     let component;
+    let childClass;
     
     switch(modal.modal) {
+        case 'signup':
+            component = <SignupFormContainer />;
+            childClass = 'modal-session-form';
+            break;
+        case 'login':
+            component = <LoginFormContainer />;
+            childClass = 'modal-session-form';
+            break;
         case 'new-movie':
             component = <MovieFormContainer />;
+            childClass = 'modal-child';
             break;
         default:
             return null;
@@ -20,7 +32,7 @@ function Modal({modal, closeModal}) {
 
     return (
         <div className='modal-background' onClick={closeModal}>
-            <div className='modal-child' onClick={e => e.stopPropagation()}>
+            <div className={childClass} onClick={e => e.stopPropagation()}>
                 {component}
             </div>
         </div>
