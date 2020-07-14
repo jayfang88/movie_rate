@@ -17,7 +17,7 @@ class MovieForm extends React.Component {
         const formData = new FormData();
         formData.append('movie[id]', this.state.id)
         formData.append('movie[title]', this.state.title)
-        formData.append('movie[yearReleased]', this.state.yearReleased)
+        formData.append('movie[year_released]', this.state.year_released)
         formData.append('movie[score]', this.state.score)
         formData.append('movie[description]', this.state.description)
         this.props.createMovie(formData)
@@ -53,7 +53,7 @@ class MovieForm extends React.Component {
                 </label>
                 <br/>
                 <label>Year Released:<br/>
-                    <input type="text" onChange={this.update('yearReleased')}/>
+                    <input type="text" onChange={this.update('year_released')}/>
                 </label>
                 <br/>
                 <label>

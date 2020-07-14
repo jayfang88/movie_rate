@@ -17,7 +17,7 @@ class Splash extends React.Component {
                 <h4>{movie.title}</h4>
                 <p>{movie.year_released}</p>
                 <p>Rating: {movie.score}</p>
-                <p>About: {movie.year_released}</p>
+                <p>About: {movie.description}</p>
             </li>
         ));
 

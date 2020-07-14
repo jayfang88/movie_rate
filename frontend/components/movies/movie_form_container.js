@@ -6,7 +6,7 @@ import MovieForm from './movie_form';
 const mstp = (state, ownProps) => ({
     movie: {
         title: '',
-        yearReleased: '',
+        year_released: '',
         score: 0,
         description: '',
     },
