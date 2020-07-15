@@ -24,7 +24,7 @@ function Modal({modal, closeModal}) {
             break;
         case 'new-movie':
             component = <MovieFormContainer />;
-            childClass = 'modal-child';
+            childClass = 'modal-movie-form';
             break;
         default:
             return null;

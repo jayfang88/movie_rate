@@ -1,0 +1,42 @@
+@import 'application.scss';
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    // align-items: center;
+}
+
+.movie-form-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.movie-form-input {
+    margin: 4px 0 8px 0;
+    padding: 5px 10px;
+    border: 1px solid $gray;
+    border-radius: 3px;
+}
+
+.movie-form-submit {
+    text-align: center;
+    margin-top: 12px;
+    width: 40%;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    background-color: $red;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.movie-form-submit:hover {
+    cursor: pointer;
+    background-color: $lightred;
+}
+.movie-form-submit:focus {
+    outline: none;
+}

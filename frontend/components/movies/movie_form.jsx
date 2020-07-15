@@ -48,22 +48,19 @@ class MovieForm extends React.Component {
 
         return(
             <form className='movie-form'>
-                <h3>Add New Movie</h3>
+                <h3 className='movie-form-title'>Add New Movie</h3>
                 { this.renderErrors() }
-                <label>Movie Title:<br/>
-                    <input type="text" onChange={this.update('title')}
-                        value={this.state.title}/>
-                </label>
-                <br/>
-                <label>Year Released:<br/>
-                    <input type="text" onChange={this.update('year_released')}/>
-                </label>
-                <br/>
-                <label>
-                    Description: <br/><textarea onChange={this.update('description')}></textarea>
-                </label>
-                <br/>
-                <button onClick={this.handleCreate}>Add Movie</button>
+                <label className='movie-form-label'>Movie Title:</label>
+                <input type="text" onChange={this.update('title')}
+                    value={this.state.title} className='movie-form-input'/>
+                <label className='movie-form-label'>Year Released:</label>
+                <input type="text" onChange={this.update('year_released')}
+                    value={this.state.year_released} className='movie-form-input'/>
+                <label className='movie-form-label'>Description:</label>
+                <textarea onChange={this.update('description')} 
+                    className='movie-form-input'></textarea>
+                <button className='movie-form-submit'
+                    onClick={this.handleCreate}>Add Movie</button>
             </form>
         )
     }

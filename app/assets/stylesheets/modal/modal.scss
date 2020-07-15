@@ -11,12 +11,12 @@
 
 .modal-child {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 4px;
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
     background-color: $white;
 }
 
@@ -25,4 +25,15 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.modal-movie-form {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    width: 400px;
+    height: 310px;
+    background-color: $white;
 }
