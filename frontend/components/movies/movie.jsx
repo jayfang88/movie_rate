@@ -16,6 +16,7 @@ class Movie extends React.Component {
 
         return(
             <div>
+                <img src={movie.photoUrl} className='movie-photo'/>
                 <h1>{movie.title}</h1>
                 <h3>{movie.year_released}</h3>
                 <p>Score: {movie.score}</p>
