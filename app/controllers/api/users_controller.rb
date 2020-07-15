@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+    def index
+        name = params[:name]
+        @users = User.where(name: name)
+        render json: @users
+    end
+
     def create
         @user = User.new(user_params)
         if @user.save
