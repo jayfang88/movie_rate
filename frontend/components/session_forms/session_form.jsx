@@ -23,7 +23,12 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
+        let capitalizedName = this.state.name[0].toUpperCase() + this.state.name.slice(1);
+        this.props.action({
+            username: this.state.username,
+            name: capitalizedName,
+            password: this.state.password
+        })
             .then(() => {
                 if (this.props.errors.length <= 0) this.props.closeModal()});
     }
