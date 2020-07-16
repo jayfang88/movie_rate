@@ -11,7 +11,7 @@
     width: 100%;
     text-align: center;
     font-weight: 600;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .movie-form-input {
@@ -19,6 +19,9 @@
     padding: 5px 10px;
     border: 1px solid $gray;
     border-radius: 3px;
+}
+.movie-form-photofile {
+    margin: 4px 0 8px 0;
 }
 
 .movie-form-submit {

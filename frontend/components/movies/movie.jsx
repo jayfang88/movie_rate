@@ -59,19 +59,25 @@ class Movie extends React.Component {
                     <img src={movie.photoUrl} className='movie-photo'/>
                 </div>
                 <section className='movie-info'>
-                    <h1>{movie.title}</h1>
-                    <h3>{movie.year_released}</h3>
-                    <p>Score: {movie.score}</p>
-                    <h5>Description:</h5>
-                    <p>{movie.description}</p>
+                    <aside className='movie-info-left'>
+                        <h1 className='movie-info-title'>{movie.title}</h1>
+                        <h3 className='movie-info-year'>{movie.year_released}</h3>
+                        <aside>
+                            <h5 className='movie-info-desc-label'>Description:</h5>
+                            <p className='movie-info-description'>{movie.description}</p>
+                        </aside>
+                    </aside>
+                    <aside className='movie-info-right'>
+                        <p className='movie-info-score'>Score: <span className='movie-info-score-num'>{movie.score}</span></p>
+                    </aside>
                 </section>
 
                 <section className='movie-comments'>
+                    <p>COMMENTS</p>
+                    <div>{filteredComments}</div>
                     <h4>Add new comment</h4>
                     <textarea onChange={this.update('body')} value={this.state.body}></textarea>
                     <button onClick={this.addComment}>Comment</button>
-                    <p>COMMENTS</p>
-                    <div>{filteredComments}</div>
                 </section>
             </div>
         )

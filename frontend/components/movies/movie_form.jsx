@@ -15,6 +15,9 @@ class MovieForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value })
     }
 
+    handleFile(e) {
+        this.setState({ photoFile: e.currentTarget.files[0] })
+    }
     handleCreate(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -23,6 +26,9 @@ class MovieForm extends React.Component {
         formData.append('movie[year_released]', this.state.year_released)
         formData.append('movie[score]', this.state.score)
         formData.append('movie[description]', this.state.description)
+        if (this.state.photoFile) {
+            formData.append('movie[photo]', this.state.photoFile)
+        }
         this.props.createMovie(formData)
             .then(() => this.props.fetchMovies())
             .then(() => {
@@ -59,6 +65,9 @@ class MovieForm extends React.Component {
                 <label className='movie-form-label'>Description:</label>
                 <textarea onChange={this.update('description')} 
                     className='movie-form-input'></textarea>
+                <label className='movie-form-label'>Movie Image:</label>
+                <input type="file" onChange={this.handleFile.bind(this)}
+                    className='movie-form-photofile'/>
                 <button className='movie-form-submit'
                     onClick={this.handleCreate}>Add Movie</button>
             </form>

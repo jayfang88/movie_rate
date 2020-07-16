@@ -3,15 +3,6 @@
 .movie-show {
 }
 
-.movie-info {
-    padding: 20px;
-}
-
-.movie-comments {
-    margin-top: 20px;
-    padding: 20px;
-}
-
 .movie-photo-bg {
     background-color: $black;
     display: flex;
@@ -20,5 +11,48 @@
 .movie-photo {
     object-fit: cover;
     width: 60%;
+    min-width: 800px;
     height: 500px;
+}
+
+.movie-info {
+    padding: 30px 40px;
+    display: flex;
+    height: 100px;
+}
+.movie-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+}
+.movie-info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+}
+
+.movie-info-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+.movie-info-year {
+
+}
+.movie-info-desc-label {
+    margin-bottom: 3px;
+}
+
+.movie-info-score {
+    font-size: 20px;
+}
+.movie-info-score-num {
+    font-size: 24px;
+    font-weight: 600
+}
+
+.movie-comments {
+    padding: 20px 40px;
 }

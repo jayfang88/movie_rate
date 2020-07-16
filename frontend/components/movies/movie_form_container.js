@@ -9,6 +9,7 @@ const mstp = (state, ownProps) => ({
         year_released: '',
         score: 0,
         description: '',
+        photoFile: null
     },
     errors: state.errors.movie,
 });
