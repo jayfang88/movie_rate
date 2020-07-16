@@ -1,25 +1,26 @@
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/movie_actions';
-import { fetchComments } from '../../actions/comment_actions';
+import { fetchComments, createComment } from '../../actions/comment_actions';
 import Movie from './movie';
 
 const mstp = (state, ownProps) => {
     const movieId = ownProps.match.params.movieId;
     const movie = state.entities.movies[movieId];
-    const comments = state.entities.comments;
-    const commentIds = Object.keys(state.entities.comments);
+    const comments = Object.values(state.entities.comments);
 
     return {
         movieId,
         movie,
         comments,
-        commentIds
+        currentUserId: state.session.id,
     }
 };
 
 const mdtp = dispatch => ({
     fetchMovies: () => dispatch(fetchMovies()),
     fetchComments: () => dispatch(fetchComments()),
+    createComment: comment => dispatch(createComment(comment)),
+
 });
 
 export default connect(mstp, mdtp)(Movie);
