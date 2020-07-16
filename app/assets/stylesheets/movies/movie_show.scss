@@ -1,3 +1,5 @@
+@import 'application.scss';
+
 .movie-show {
 }
 
@@ -10,8 +12,13 @@
     padding: 20px;
 }
 
+.movie-photo-bg {
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+}
 .movie-photo {
     object-fit: cover;
-    width: 100%;
+    width: 60%;
     height: 500px;
 }

@@ -51,11 +51,13 @@ class Movie extends React.Component {
         ))
       
         filteredComments = filteredComments.map((comment, i) => (
-            <CommentItem key={i} comment={comment}/>
+            <CommentItem key={i} comment={comment} deleteComment={commentId => this.props.deleteComment(commentId)}/>
         ))
         return(
             <div className='movie-show'>
-                <img src={movie.photoUrl} className='movie-photo'/>
+                <div className='movie-photo-bg'>
+                    <img src={movie.photoUrl} className='movie-photo'/>
+                </div>
                 <section className='movie-info'>
                     <h1>{movie.title}</h1>
                     <h3>{movie.year_released}</h3>

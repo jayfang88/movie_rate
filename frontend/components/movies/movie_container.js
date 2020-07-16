@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/movie_actions';
-import { fetchComments, createComment } from '../../actions/comment_actions';
+import { fetchComments, createComment, deleteComment } from '../../actions/comment_actions';
 import Movie from './movie';
 
 const mstp = (state, ownProps) => {
@@ -20,7 +20,7 @@ const mdtp = dispatch => ({
     fetchMovies: () => dispatch(fetchMovies()),
     fetchComments: () => dispatch(fetchComments()),
     createComment: comment => dispatch(createComment(comment)),
-
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
 });
 
 export default connect(mstp, mdtp)(Movie);
