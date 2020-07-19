@@ -53,6 +53,7 @@ class Movie extends React.Component {
         filteredComments = filteredComments.map((comment, i) => (
             <CommentItem key={i} comment={comment} deleteComment={commentId => this.props.deleteComment(commentId)}/>
         ))
+
         return(
             <div className='movie-show'>
                 <div className='movie-photo-bg'>
@@ -72,11 +73,12 @@ class Movie extends React.Component {
                     </aside>
                 </section>
 
-                <section className='movie-comments'>
-                    <p>COMMENTS</p>
-                    <div>{filteredComments}</div>
+                <section className='movie-comments-section'>
+                <h1 className='movie-comments-title'>Comments</h1>
+                    <div className='movie-comments'>{filteredComments}</div>
                     <h4>Add new comment</h4>
-                    <textarea onChange={this.update('body')} value={this.state.body}></textarea>
+                    <textarea onChange={this.update('body')} 
+                        value={this.state.body}></textarea>
                     <button onClick={this.addComment}>Comment</button>
                 </section>
             </div>

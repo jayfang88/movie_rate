@@ -1,5 +1,30 @@
 @import 'application.scss';
 
 .comment-item {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+    display: flex;
+}
+
+.comment-user {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+.comment-user-circle {
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 46px;
+    border: 2px solid $gray;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.comment-user-initial {
+    font-weight: 600;
+}
+
+.comment-info {
+    width: 100%;
+    margin-left: 10px;
 }

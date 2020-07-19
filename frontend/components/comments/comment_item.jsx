@@ -8,11 +8,20 @@ class CommentItem extends React.Component {
 
     render() {
         const { comment } = this.props;
+        const user = comment.user[0].toUpperCase() + comment.user.slice(1).toLowerCase();
+
         return(
             <div className='comment-item'>
-                <p>{comment.body}</p>
-                <h5 className='comment-author'>from: {comment.user}</h5>
-                <button onClick={() => this.props.deleteComment(comment.id)}>delete comment</button>
+                <section className='comment-user'>
+                    <div className='comment-user-circle'>
+                        <h1 className='comment-user-initial'>{user[0]}</h1>
+                    </div>
+                </section>
+                <section className='comment-info'>
+                    <h5 className='comment-author'>{user}</h5>
+                    <p>{comment.body}</p>
+                    <button onClick={() => this.props.deleteComment(comment.id)}>Delete comment</button>
+                </section>
             </div>
         )
     }
