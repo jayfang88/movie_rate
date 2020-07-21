@@ -1,0 +1,26 @@
+@import 'application.scss';
+
+.movie-ii {
+    display: inline-grid;
+    flex-direction: column;
+    width: 100%;
+    color: $black;
+}
+
+.movie-ii-photo {
+    object-fit: cover;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 6px;
+}
+
+.movie-ii-head {
+    margin-bottom: 4px;
+}
+.movie-ii-title {
+    color: $black;
+    font-weight: 600;
+}
+.movie-ii-title:hover {
+    color: $red;
+}
