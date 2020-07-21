@@ -48,7 +48,9 @@ class Movie extends React.Component {
 
         let filteredComments = comments.filter(comment => (
             comment.movie_id.toString() === movieId
-        ))
+        )).reverse();
+
+        let numComments = filteredComments.length;
       
         filteredComments = filteredComments.map((comment, i) => (
             <CommentItem key={i} comment={comment} deleteComment={commentId => this.props.deleteComment(commentId)}/>
@@ -69,17 +71,25 @@ class Movie extends React.Component {
                         </aside>
                     </aside>
                     <aside className='movie-info-right'>
-                        <p className='movie-info-score'>Score: <span className='movie-info-score-num'>{movie.score}</span></p>
+                        <p className='movie-info-score'>Score: 
+                            <span className='movie-info-score-num'> {movie.score}</span>
+                        </p>
                     </aside>
                 </section>
 
                 <section className='movie-comments-section'>
-                <h1 className='movie-comments-title'>Comments</h1>
+                <h1 className='movie-comments-title'>{numComments} Comments</h1>
+                    <section className='movie-comments-new'>
+                        <textarea onChange={this.update('body')} placeholder='Add a comment...'
+                            value={this.state.body} className='movie-comments-add'></textarea>
+                        { this.state.body.length > 0 ? (
+                            <button onClick={this.addComment} className='create-comment'>Comment</button>
+                        ) : (
+                            <div className='create-comment'>Comment</div>
+                        )}
+                    </section>
+                    
                     <div className='movie-comments'>{filteredComments}</div>
-                    <h4>Add new comment</h4>
-                    <textarea onChange={this.update('body')} 
-                        value={this.state.body}></textarea>
-                    <button onClick={this.addComment}>Comment</button>
                 </section>
             </div>
         )
