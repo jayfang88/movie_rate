@@ -71,9 +71,12 @@ class Movie extends React.Component {
                         </aside>
                     </aside>
                     <aside className='movie-info-right'>
-                        <p className='movie-info-score'>Score: 
+                        <div className='movie-info-score'>Score: 
                             <span className='movie-info-score-num'> {movie.score}</span>
-                        </p>
+                        </div>
+                        <div className='movie-info-update'>
+                            <button className='movie-info-update-btn'>Edit movie</button>
+                        </div>
                     </aside>
                 </section>
 

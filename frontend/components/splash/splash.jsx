@@ -16,13 +16,6 @@ class Splash extends React.Component {
         
         let movies = this.props.movies.map((movie, i) => (
             <MovieIndexItem key={i} movie={movie} />
-            // <li key={i}>
-            //     <Link to={`/m/${movie.id}`}>{movie.title}</Link>
-            //     <p>{movie.year_released}</p>
-            //     <p>Rating: {movie.score}</p>
-            //     <p>About: {movie.description}</p>
-            //     <br/>
-            // </li>
         ));
 
         return(
@@ -30,7 +23,9 @@ class Splash extends React.Component {
                 <section>
                     <h2 className='splash-movies-title'>Featured Movies</h2>
                     <div className='splash-movie-i'>{ movies }</div>
-                    <Link to='/movies' className='splash-all-movies'>See all movies</Link>
+                    <div className='splash-all-movies'>
+                        <Link to='/movies' className='splash-movies-link'>
+                            See all movies</Link></div>
                 </section>
             </div>
         )

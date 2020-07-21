@@ -34,6 +34,33 @@
     width: 50%;
 }
 
+.movie-info-score {
+    height: 50%;
+    font-size: 20px;
+}
+.movie-info-score-num {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.movie-info-update {
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.movie-info-update-btn {
+    border: none;
+    text-decoration: underline;
+    background-color: $white;
+}
+.movie-info-update-btn:hover {
+    cursor: pointer
+}
+.movie-info-update-btn:focus {
+    outline: none;
+}
+
 .movie-info-title {
     font-size: 24px;
     font-weight: 600;
@@ -44,14 +71,6 @@
 
 .movie-info-desc-label {
     margin-bottom: 3px;
-}
-
-.movie-info-score {
-    font-size: 20px;
-}
-.movie-info-score-num {
-    font-size: 24px;
-    font-weight: 600
 }
 
 // Comments Section
@@ -73,12 +92,14 @@
 }
 
 .movie-comments-add {
+    box-sizing: border-box;
     width: 100%;
     border: none;
     font-size: 14px;
     margin-bottom: 8px;
     border: 1px solid $gray;
     border-radius: 3px;
+    padding: 6px 8px;
 }
 .movie-comments-add:focus {
     outline: none;

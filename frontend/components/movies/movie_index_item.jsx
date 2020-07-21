@@ -10,8 +10,10 @@ class MovieIndexItem extends React.Component {
         const { movie } = this.props;
         return(
             <div className='movie-ii'>
-                <img src={movie.photoUrl} alt={`${movie.title} image`} 
-                    className='movie-ii-photo'/>
+                <Link to={`/m/${movie.id}`}>
+                    <img src={movie.photoUrl} alt={`${movie.title} image`} 
+                    className='movie-ii-photo' />
+                </Link>
                 <p className='movie-ii-head'><Link to={`/m/${movie.id}`} className='movie-ii-title'>
                     {movie.title}</Link> - 
                     <span> ({movie.year_released})</span>
