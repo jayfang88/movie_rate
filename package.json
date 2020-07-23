@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/jayfang88/movie_rate#readme",
   "engines": {
-    "node": "10.13.0",
-    "npm": "6.4.1"
+    "node": "12.5.0",
+    "npm": "6.9.0"
   }
 }
