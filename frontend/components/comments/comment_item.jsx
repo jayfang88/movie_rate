@@ -36,7 +36,8 @@ class CommentItem extends React.Component {
                 <section className='comment-info'>
                     <h5 className='comment-author'>{author} <span className='comment-date'>- {date}</span></h5>
                     <p className='comment-body'>{comment.body}</p>
-                    <button onClick={() => this.props.deleteComment(comment.id)}>Delete comment</button>
+                    <button onClick={() => this.props.deleteComment(comment.id)}
+                        className='comment-delete'>Delete comment</button>
                 </section>
             </div>
         )

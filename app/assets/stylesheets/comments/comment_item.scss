@@ -42,3 +42,16 @@
 .comment-body {
     margin-bottom: 5px;
 }
+
+.comment-delete {
+    font-size: 12px;
+    border: none;
+    background-color: $white;
+}
+.comment-delete:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.comment-delete:focus {
+    outline: none;
+}
