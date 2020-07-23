@@ -12,11 +12,13 @@ const mstp = (state, ownProps) => ({
         photoFile: null
     },
     errors: state.errors.movie,
+    formTitle: 'Add New Movie',
+    formButton: 'Add Movie'
 });
 
 const mdtp = dispatch => ({
     fetchMovies: () => dispatch(fetchMovies()),
-    createMovie: movie => dispatch(createMovie(movie)),
+    movieAction: movie => dispatch(createMovie(movie)),
     closeModal: () => dispatch(closeModal())
 });
 

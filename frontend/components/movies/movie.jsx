@@ -74,7 +74,8 @@ class Movie extends React.Component {
                             <span className='movie-info-score-num'> {movie.score}</span>
                         </div>
                         <div className='movie-info-update'>
-                            <button className='movie-info-update-btn'>Edit movie</button>
+                            <button onClick={() => this.props.openModal('edit-movie')}
+                                className='movie-info-update-btn'>Edit movie</button>
                         </div>
                     </aside>
                 </section>

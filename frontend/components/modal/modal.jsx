@@ -4,6 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import MovieFormContainer from '../movies/movie_form_container';
 import SignupFormContainer from '../session_forms/signup_form_container';
 import LoginFormContainer from '../session_forms/login_form_container';
+import MovieUpdate from '../movies/movie_update';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -26,9 +27,10 @@ function Modal({modal, closeModal}) {
             component = <MovieFormContainer />;
             childClass = 'modal-movie-form';
             break;
-        case 'update-movie':
-            component = <MovieFormContainer />;
+        case 'edit-movie':
+            component = <MovieUpdate />;
             childClass ='modal-movie-form';
+            break;
         default:
             return null;
     }

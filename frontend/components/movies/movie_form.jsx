@@ -29,7 +29,7 @@ class MovieForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('movie[photo]', this.state.photoFile)
         }
-        this.props.createMovie(formData)
+        this.props.movieAction(formData)
             .then(() => this.props.fetchMovies())
             .then(() => {
                 if (this.props.errors.length <= 0) {
@@ -51,10 +51,10 @@ class MovieForm extends React.Component {
     }
 
     render() {
-
+        const { formTitle, formButton } = this.props;
         return(
             <form className='movie-form'>
-                <h3 className='movie-form-title'>Add New Movie</h3>
+                <h3 className='movie-form-title'>{formTitle}</h3>
                 { this.renderErrors() }
                 <label className='movie-form-label'>Movie Title:</label>
                 <input type="text" onChange={this.update('title')}
@@ -64,12 +64,13 @@ class MovieForm extends React.Component {
                     value={this.state.year_released} className='movie-form-input'/>
                 <label className='movie-form-label'>Description:</label>
                 <textarea onChange={this.update('description')} 
-                    className='movie-form-input'></textarea>
+                    className='movie-form-input' value={this.state.description}>
+                </textarea>
                 <label className='movie-form-label'>Movie Image:</label>
                 <input type="file" onChange={this.handleFile.bind(this)}
                     className='movie-form-photofile'/>
                 <button className='movie-form-submit'
-                    onClick={this.handleCreate}>Add Movie</button>
+                    onClick={this.handleCreate}>{formButton}</button>
             </form>
         )
     }
