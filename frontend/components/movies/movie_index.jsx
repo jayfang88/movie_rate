@@ -12,7 +12,6 @@ class MovieIndex extends React.Component {
 
     delete(movieId) {
         this.props.deleteMovie(movieId)
-            .then(console.log('success'))
     }
 
     render() {
