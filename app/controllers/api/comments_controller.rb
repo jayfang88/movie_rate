@@ -9,8 +9,8 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        @comment[:user_id] = current_user.id
-        @comment[:movie_id] = params[:comment][:movie_id]
+        # @comment[:user_id] = current_user.id
+        # @comment[:movie_id] = params[:comment][:movie_id]
 
         if @comment.save
             render :show
