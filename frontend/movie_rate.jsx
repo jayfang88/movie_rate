@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // TEST START
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
     // TEST END
 
     const root = document.getElementById("root");

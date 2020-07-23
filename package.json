@@ -1,6 +1,5 @@
 {
   "name": "movie_rate",
-  "private": true,
   "dependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
