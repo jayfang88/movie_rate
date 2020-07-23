@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                         <button onClick={() => this.createMovie()}
                             className='nav-add'>Add New
                         </button>
-                        <p className='nav-user'>Signed in as: {currentUser.name[0].toUpperCase()}</p>
+                        <p className='nav-user'>Signed in as: {currentUser.name.toUpperCase()}</p>
                         <button onClick={() => this.handleLogout()}
                             className='nav-logout'>Log Out
                         </button>
