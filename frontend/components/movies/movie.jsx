@@ -24,7 +24,6 @@ class Movie extends React.Component {
 
     addComment(e) {
         e.preventDefault();
-        // debugger;
         if (!this.props.currentUserId) {
             alert('sorry, you must be logged in')
             return;
