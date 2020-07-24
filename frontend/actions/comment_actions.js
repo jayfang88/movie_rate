@@ -27,7 +27,8 @@ const receiveErrors = errors => ({
 
 export const fetchComments = () => dispatch => (
     APIUtil.fetchComments()
-        .then(comments => dispatch(receiveComments(comments)))
+        .then(comments => dispatch(receiveComments(comments))),
+            err => console.log(err.responseJSON)
 );
 
 export const createComment = comment => dispatch => (

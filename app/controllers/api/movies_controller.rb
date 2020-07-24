@@ -4,7 +4,7 @@ class Api::MoviesController < ApplicationController
     end
 
     def show
-        @movies = Movie.find_by(id: params[:id])
+        @movie = Movie.find_by(id: params[:id])
     end
 
     def create
