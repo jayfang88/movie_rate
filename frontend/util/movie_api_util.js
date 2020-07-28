@@ -2,7 +2,6 @@ export const fetchMovies = () => (
     $.ajax({
         method: 'GET',
         url: '/api/movies',
-        error: (err) => console.log(err)
     })
 );
 
