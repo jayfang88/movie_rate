@@ -3,9 +3,9 @@ class Api::CommentsController < ApplicationController
         @comments = Comment.all
     end
 
-    # def show
-    #     @comment = Comment.find_by(id: params[:id])
-    # end
+    def show
+        @comment = Comment.find_by(id: params[:id])
+    end
 
     def create
         @comment = Comment.new(comment_params)

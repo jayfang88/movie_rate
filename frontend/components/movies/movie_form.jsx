@@ -18,6 +18,7 @@ class MovieForm extends React.Component {
     handleFile(e) {
         this.setState({ photoFile: e.currentTarget.files[0] })
     }
+    
     handleCreate(e) {
         e.preventDefault();
         const formData = new FormData();
