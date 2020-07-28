@@ -6,7 +6,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password
 
-    has_many :reviews
+    has_many :comments
 
     def reset_session_token!
         self.session_token = SecureRandom::urlsafe_base64(16)

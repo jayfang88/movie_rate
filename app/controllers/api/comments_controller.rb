@@ -16,14 +16,14 @@ class Api::CommentsController < ApplicationController
         end
     end
 
-    # def update
-    #     @comment = Comment.find_by(id: params[:comment][:id])
-    #     if @commment.update(comment_params)
-    #         render :show
-    #     else
-    #         render json: @comment.errors.full_messages, status: 422
-    #     end
-    # end
+    def update
+        @comment = Comment.find_by(id: params[:comment][:id])
+        if @commment.update(comment_params)
+            render :show
+        else
+            render json: @comment.errors.full_messages, status: 422
+        end
+    end
     
     def destroy
         @comment = Comment.find_by(id: params[:id])
