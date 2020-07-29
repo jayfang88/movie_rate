@@ -57,7 +57,8 @@ class Movie extends React.Component {
 
         return(
             <div className='movie-show'>
-                <div className='movie-photo-bg'>
+                <div className='movie-photo-container'>
+                    <img src={movie.photoUrl} className='movie-photo-bg'/>
                     <img src={movie.photoUrl} className='movie-photo'/>
                 </div>
                 <section className='movie-info'>
@@ -81,7 +82,7 @@ class Movie extends React.Component {
                 </section>
 
                 <section className='movie-comments-section'>
-                <h1 className='movie-comments-title'>{numComments} Comments</h1>
+                    <h1 className='movie-comments-title'>{numComments} Comments</h1>
                     <section className='movie-comments-new'>
                         <textarea onChange={this.update('body')} placeholder='Add a comment...'
                             value={this.state.body} className='movie-comments-add'></textarea>
