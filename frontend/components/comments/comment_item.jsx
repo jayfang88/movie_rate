@@ -22,9 +22,10 @@ class CommentItem extends React.Component {
     }
 
     render() {
-        const { comment } = this.props;
+        const { comment, currentUserId } = this.props;
         const date = this.parseDate(comment.updated_at);
         const author = comment.author[0].toUpperCase() + comment.author.slice(1).toLowerCase();
+        // debugger;
 
         return(
             <div className='comment-item'>
@@ -36,8 +37,12 @@ class CommentItem extends React.Component {
                 <section className='comment-info'>
                     <h5 className='comment-author'>{author} <span className='comment-date'>- {date}</span></h5>
                     <p className='comment-body'>{comment.body}</p>
-                    <button onClick={() => this.props.deleteComment(comment.id)}
+                    {currentUserId === comment.user_id ? (
+                        <button onClick={() => this.props.deleteComment(comment.id)}
                         className='comment-delete'>Delete comment</button>
+                    ) : (
+                        <div></div>
+                    )}
                 </section>
             </div>
         )

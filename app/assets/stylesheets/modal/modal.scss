@@ -7,6 +7,7 @@
     right: 0;
     left: 0;
     background: rgba(43, 43, 43, 0.80);
+    z-index: 2;
 }
 
 .modal-child {
@@ -18,6 +19,7 @@
     width: 600px;
     height: 500px;
     background-color: $white;
+    z-index: 3;
 }
 
 .modal-session-form {
@@ -25,6 +27,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 3;
 }
 
 .modal-movie-form {
@@ -36,4 +39,5 @@
     width: 400px;
     height: 341px;
     background-color: $white;
+    z-index: 3;
 }

@@ -43,7 +43,7 @@ class Movie extends React.Component {
 
     render() {
         if (!this.props.movie) return null;
-        const { movieId, movie, comments } = this.props;
+        const { movieId, movie, comments, currentUserId } = this.props;
 
         let filteredComments = comments.filter(comment => (
             comment.movie_id.toString() === movieId
@@ -52,7 +52,8 @@ class Movie extends React.Component {
         let numComments = filteredComments.length;
       
         filteredComments = filteredComments.map((comment, i) => (
-            <CommentItem key={i} comment={comment} deleteComment={commentId => this.props.deleteComment(commentId)}/>
+            <CommentItem key={i} comment={comment} currentUserId={currentUserId}
+                deleteComment={commentId => this.props.deleteComment(commentId)}/>
         ))
 
         return(
