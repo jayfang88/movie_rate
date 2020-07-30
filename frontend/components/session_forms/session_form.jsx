@@ -24,7 +24,9 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.props.formType === 'Sign Up') {
-            this.setState({ name: this.state.name[0].toUpperCase() + this.state.name.slice(1).toLowerCase()})
+            if (this.state.name !== '') {
+                this.setState({ name: this.state.name[0].toUpperCase() + this.state.name.slice(1).toLowerCase()})
+            }
         }
         this.props.action(this.state)
             .then(() => {
